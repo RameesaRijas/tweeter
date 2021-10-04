@@ -1,0 +1,29 @@
+/*
+* nav style
+*/
+
+nav {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#FFFFFF;
+  background-color: #4056A1;
+  width: auto;
+  height: 120px;
+  padding : 0 1.5em;
+  z-index: -1;
+  position:relative;
+}
+
+/** span inside nav*/
+nav .title{
+  font-family: Bungee;
+}
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav div i {
+  color: red;
+}
