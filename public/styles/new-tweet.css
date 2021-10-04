@@ -1,0 +1,64 @@
+/**
+* contains tweet form style
+*
+*/
+.new-tweet {
+  border-radius: 5px;
+  padding-top: 1px;
+  background-color: #f4f1ec;
+  margin: 0 2em;
+  align-items: center;
+}
+
+.new-tweet h2 {
+  margin: 10px;
+}
+
+form {
+  padding: 10px;
+  position: relative;
+}
+
+/**
+*Textarea style
+*/
+textarea {
+  padding: 9px;
+  width: 100%;
+  height: 49px;
+  resize: none;
+  border: none;
+  border-bottom: solid rgb(89, 84, 84);
+  background-color: #f4f1ec;
+}
+
+#tweet-form textarea:focus-visible {
+  outline:none;
+  border-bottom: solid rgb(20, 18, 18);
+}
+
+/**
+*footer section
+*
+*/
+
+section div {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+  padding-top: 7px;
+}
+
+section button {
+  padding: 2px 9px;
+  font-family: Bungee;
+  border: none;
+  background: #4056A1;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.counter {
+  font-family: Bungee;
+  float: right;
+}
