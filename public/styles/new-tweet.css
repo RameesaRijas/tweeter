@@ -8,6 +8,7 @@
   background-color: #f4f1ec;
   margin: 0 2em;
   align-items: center;
+  margin-bottom:50px;
 }
 
 .new-tweet h2 {
@@ -28,7 +29,7 @@ textarea {
   height: 60px;
   resize: none;
   border: none;
-  border-bottom: solid rgb(89, 84, 84);
+  border-bottom: solid rgb(118, 116, 116);
   background-color: #f4f1ec;
 }
 

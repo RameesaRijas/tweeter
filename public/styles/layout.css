@@ -24,8 +24,62 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- main {
+main {
   background-color: #f4f1ec;
   width: 90%;
   margin: 0 auto;
- }
+}
+
+/**
+*tweet conteiner
+*/
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin: 0 2em;
+  padding:20px;
+  border:solid rgb(20, 18, 18);
+}
+
+article.tweet:hover {
+  box-shadow: 10px 0 5px -2px #888;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+article.tweet header div.username {
+  color:#b9b6b6;
+  margin-left: auto;
+}
+
+article.tweet header div img {
+  height:40px;
+}
+
+article.tweet p {
+  margin-top:2em;
+}
+
+article.tweet footer{
+  font-size: 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  padding-top:15px;
+  border-top-style: solid;
+  border-top-color:rgb(17, 16, 16);
+}
+
+article.tweet footer div i:hover {
+  color:rgb(230, 183, 30);
+}
+
+
+
+
