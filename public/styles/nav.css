@@ -8,11 +8,13 @@ nav {
   align-items: center;
   color:#FFFFFF;
   background-color: #4056A1;
-  width: auto;
   height: 120px;
   padding : 0 1.5em;
-  z-index: -1;
-  position:relative;
+  overflow: hidden;
+  z-index: 9999;
+  position:fixed;
+  top:0;
+  width:100%;
 }
 
 /** span inside nav*/
