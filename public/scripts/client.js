@@ -5,6 +5,7 @@
  */
 $(() => {
   //get tweets by ajax get call
+  $(".error").hide();
   const loadTweets = () => {
     $.ajax({
       url : "/tweets",
@@ -17,32 +18,31 @@ $(() => {
       }
     });
   }
-
   loadTweets();
 
+  //html markup
   const createTweetElement = (tweet) => {
-    //html markup
     const time = timeago.format(tweet.created_at);
     let $tweet = `<article class="tweet">
-                      <header>
-                        <div>
-                          <img src="${tweet.user.avatars}">
-                        </div>
-                        <div>
-                          ${tweet.user.name}
-                        </div>
-                        <div class="userhandle">${tweet.user.handle}</div>
-                      </header>
-                      <p>${escape(tweet.content.text)}</p>
-                      <footer>
-                        <div>${time}</div>
-                        <div>
-                          <i class="fas fa-flag"></i>
-                          <i class="fas fa-retweet"></i>
-                          <i class="fas fa-heart"></i>
-                        </div>
-                      </footer>
-                      </article>`;
+                    <header>
+                      <div>
+                        <img src="${tweet.user.avatars}">
+                      </div>
+                      <div>
+                        ${tweet.user.name}
+                      </div>
+                      <div class="userhandle">${tweet.user.handle}</div>
+                    </header>
+                    <p>${escape(tweet.content.text)}</p>
+                    <footer>
+                      <div>${time}</div>
+                      <div>
+                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-retweet"></i>
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </footer>
+                  </article>`;
     return $tweet;
   };
 
@@ -53,10 +53,10 @@ $(() => {
     return para.innerHTML;
   };
 
-  const renderTweets = function(tweets) {
-    // loops through tweets
+   // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+  const renderTweets = function(tweets) {
     const $tweetContainer = $('#tweets-container');
     $tweetContainer.empty();
     tweets.forEach(item => {
@@ -68,25 +68,29 @@ $(() => {
   //input data, form submit event listener
   const $form = $("#tweet-form");
   const $text = $('#tweet-text');
+  $("#warning-icon").addClass('fas fa-exclamation-triangle');
   $form.on("submit", function(event) {
     const limit = 140;
     event.preventDefault();
     //check if character count exceeds
     //if empty
     if ($text.val().length > limit) {
-      alert("Character count exceeds");
+      
+      $(".error span").text("Too Long!!Try within the limit of 140 characters!!");
+      $(".error").slideDown("slow");
 
-    } else if ($text.val().length) {
+    } else if ($text.val().length && $text.val() !== " ") {
       const serializeInputs = $(this).serialize();
       //ajax call to post request
       $.post("/tweets", serializeInputs, (res) => {
         $text.val("");
-        $(".counter").text(140);
+        $(".counter").text(limit);
         loadTweets();
       });
 
     } else {
-      alert("Please type something !");
+      $(".error span").text("Please type something!");
+      $(".error").slideDown("slow");
     }
   });
 });

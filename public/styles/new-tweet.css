@@ -16,6 +16,7 @@
 }
 
 form {
+  margin-top:50px;/**/
   padding: 10px;
   position: relative;
 }
@@ -68,3 +69,16 @@ section button:focus{border:solid #90b1dd}
 }
 
 .counter.exceeded {color: red;}
+
+/*
+*error message
+*/
+.error {
+  border: 1px solid;
+  margin: 20px 0px;
+  padding: 15px 10px 15px 10px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-color: #FFBABA;
+}
