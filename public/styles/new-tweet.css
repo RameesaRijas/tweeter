@@ -53,11 +53,14 @@ section div {
 section button {
   padding: 2px 9px;
   font-family: Bungee;
-  border: none;
+  border: solid;
   background: #4056A1;
   color: #FFFFFF;
   text-transform: uppercase;
 }
+section button:hover{border:solid #90b1dd}
+
+section button:focus{border:solid #90b1dd}
 
 .counter {
   font-family: Bungee;
