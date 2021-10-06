@@ -27,9 +27,9 @@ const data = [
     "created_at": 1461113959088
   }
 ]
-$().ready(function() {
+$(() => {
   const createTweetElement = (tweet) => {
-    console.log(tweet);
+    //html markup
     const time = timeago.format(tweet.created_at); 
     let $tweet = `<article class="tweet">
                       <header>
@@ -65,5 +65,18 @@ $().ready(function() {
   }
   renderTweets(data);
 
+  //input data, form submit event listener
+  const $form = $("#tweet-form");
+  $form.on("submit", function(event) {
+    event.preventDefault();
+    const serializeInputs = $(this).serialize();
+    $('#tweet-text').val("");
+    //ajax call to post request
+    $.post("/tweets", serializeInputs, (res) => {
+      console.log(res);
+    })
+  })
 });
+
+
 
