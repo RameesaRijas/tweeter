@@ -58,15 +58,27 @@ $(() => {
 
   //input data, form submit event listener
   const $form = $("#tweet-form");
+  const $text = $('#tweet-text');
   $form.on("submit", function(event) {
+    const limit = 140;
     event.preventDefault();
-    const serializeInputs = $(this).serialize();
-    $('#tweet-text').val("");
-    //ajax call to post request
-    $.post("/tweets", serializeInputs, (res) => {
-      console.log(res);
-    })
-    loadTweets();
+    //check if character count exceeds
+    //if empty
+    if ($text.val().length > 140) {
+      window.alert("Character count exceeds");
+
+    } else if ($text.val().length) {
+      const serializeInputs = $(this).serialize();
+      //ajax call to post request
+      $.post("/tweets", serializeInputs, (res) => {
+        $text.val("");
+        $(".counter").text(140);
+        loadTweets();
+      })  
+
+    } else {
+      window.alert("Please type something !");
+    }
   })
 });
 
