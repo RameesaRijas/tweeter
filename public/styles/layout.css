@@ -63,6 +63,7 @@ article.tweet header div img {
 }
 
 article.tweet p {
+  word-break: break-all;
   margin-top:2em;
 }
 
