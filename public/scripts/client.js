@@ -22,7 +22,7 @@ $(() => {
 
   const createTweetElement = (tweet) => {
     //html markup
-    const time = timeago.format(tweet.created_at); 
+    const time = timeago.format(tweet.created_at);
     let $tweet = `<article class="tweet">
                       <header>
                         <div>
@@ -33,7 +33,7 @@ $(() => {
                         </div>
                         <div class="userhandle">${tweet.user.handle}</div>
                       </header>
-                      <p>${tweet.content.text}</p>
+                      <p>${escape(tweet.content.text)}</p>
                       <footer>
                         <div>${time}</div>
                         <div>
@@ -42,17 +42,26 @@ $(() => {
                           <i class="fas fa-heart"></i>
                         </div>
                       </footer>
-                      </article>`
+                      </article>`;
     return $tweet;
-  }
+  };
+
+  //for xss attacks
+  const escape = (str) => {
+    let para = document.createElement("p");
+    para.appendChild(document.createTextNode(str));
+    return para.innerHTML;
+  };
 
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    const $tweetContainer = $('#tweets-container');
+    $tweetContainer.empty();
     tweets.forEach(item => {
       let $tweet = createTweetElement(item);
-      $('#tweets-container').prepend($tweet);
+      $tweetContainer.prepend($tweet);
     })
   }
 
@@ -64,8 +73,8 @@ $(() => {
     event.preventDefault();
     //check if character count exceeds
     //if empty
-    if ($text.val().length > 140) {
-      window.alert("Character count exceeds");
+    if ($text.val().length > limit) {
+      alert("Character count exceeds");
 
     } else if ($text.val().length) {
       const serializeInputs = $(this).serialize();
@@ -74,12 +83,12 @@ $(() => {
         $text.val("");
         $(".counter").text(140);
         loadTweets();
-      })  
+      });
 
     } else {
-      window.alert("Please type something !");
+      alert("Please type something !");
     }
-  })
+  });
 });
 
 
