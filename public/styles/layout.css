@@ -38,7 +38,7 @@ article.tweet {
   flex-direction: column;
   padding-top: 10px;
   border-radius: 5px;
-  margin: 0 2em;
+  margin: 2em;
   padding:20px;
   border:solid rgb(20, 18, 18);
 }
@@ -53,7 +53,7 @@ article.tweet header {
   align-items: center;
 }
 
-article.tweet header div.username {
+article.tweet header div.userhandle {
   color:#b9b6b6;
   margin-left: auto;
 }
