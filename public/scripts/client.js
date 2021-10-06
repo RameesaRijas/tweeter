@@ -37,9 +37,9 @@ $(() => {
                     <footer>
                       <div>${time}</div>
                       <div>
-                        <i class="fas fa-flag"></i>
-                        <i class="fas fa-retweet"></i>
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-flag" title="flag"></i>
+                        <i class="fas fa-retweet" title="Re-tweet"></i>
+                        <i class="fas fa-heart" title="Like"></i>
                       </div>
                     </footer>
                   </article>`;
@@ -93,6 +93,19 @@ $(() => {
       $(".error").slideDown("slow");
     }
   });
+
+  //on page load hide compose
+  $(".new-tweet").hide();
+  //compose button
+  //show and hide
+  $(".compose-tweet").click(() => {
+    if ($(".new-tweet").is(':hidden')) {
+      $(".new-tweet").show();
+      $(".new-tweet").find("textarea").focus();
+    } else {
+      $(".new-tweet").hide();
+    }
+  })
 });
 
 
