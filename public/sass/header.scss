@@ -4,7 +4,6 @@
 @use 'variables';
 .header {
   height: 400px;
-  /* width: auto; */
   @include variables.flex;
   background-color: variables.$headerBackground;
   background-image: variables.$backgroundImage;
