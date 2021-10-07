@@ -106,6 +106,24 @@ $(() => {
       $(".new-tweet").hide();
     }
   })
+
+  //scroll to top
+  var btn = $('#scroll-button');
+  btn.hide();
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+      btn.show();
+    } else {
+      btn.hide();
+    }
+  });
+
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+    $(".new-tweet").show();
+    $(".new-tweet").find("textarea").focus();
+  });
 });
 
 
