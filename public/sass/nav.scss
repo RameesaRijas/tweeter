@@ -6,8 +6,9 @@
 nav {
   @include variables.flex($direction:none);
   justify-content: space-between;
-  color:#FFFFFF;
-  background-color: variables.$navcolor;
+  color:variables.$textcolor;
+  background-color: variables.$headerBackground;
+  background-image: variables.$backgroundImage;
   height: 120px;
   padding : 0 1.5em;
   overflow: hidden;

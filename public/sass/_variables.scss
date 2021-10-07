@@ -1,5 +1,8 @@
 $navcolor: #4056A1;
-$background: #f4f1ec;
+$background: #f4f4ec;
+$headerBackground:#f2be00;
+$backgroundImage: url("/images/background.png");
+$textcolor:#FFFFFF;
 
 @mixin flex($direction: column) {
   display:flex;

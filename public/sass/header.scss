@@ -6,6 +6,10 @@
   height: 400px;
   /* width: auto; */
   @include variables.flex;
-  background-color:#e99457;
-  background-image: url("/images/transparent.png");
+  background-color: variables.$headerBackground;
+  background-image: variables.$backgroundImage;
+
+  h2 {
+    color: variables.$textcolor;
+  }
 }

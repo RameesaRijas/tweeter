@@ -106,6 +106,9 @@ article.tweet {
   }
 }
 @media only screen and (min-width: 1024px) {
+  body nav {
+    background-color: variables.$navcolor;
+  }
   .header {
     float:left;
     width :30%;
