@@ -1,0 +1,88 @@
+/**
+* contains tweet form style
+*
+*/
+@use 'variables';
+
+.new-tweet {
+  border-radius: 5px;
+  padding-top: 1px;
+  background-color: variables.$background;
+  margin: 0 2em;
+  align-items: center;
+  margin-bottom:50px;
+
+  h2 {
+    margin: 10px;
+  }
+}
+
+form {
+  margin-top:50px;/**/
+  padding: 10px;
+  position: relative;
+}
+
+/**
+*Textarea style
+*/
+textarea {
+  padding: 9px;
+  width: 100%;
+  height: 60px;
+  resize: none;
+  border: none;
+  border-bottom: solid rgb(118, 116, 116);
+  background-color: variables.$background;
+}
+
+#tweet-form textarea:focus-visible {
+  outline:none;
+  border-bottom: solid rgb(20, 18, 18);
+}
+
+/**
+*footer section
+*
+*/
+section {
+  div {
+    @include variables.flex($direction:row);
+    justify-content: space-between;
+    padding-top: 7px;
+  }
+  
+  button {
+    padding: 2px 9px;
+    font-family: Bungee;
+    border: solid;
+    background: variables.$navcolor;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  
+    &:hover{
+      border:solid #90b1dd
+    }
+    &:focus{border:solid #90b1dd}
+  }
+}
+
+.counter {
+  font-family: Bungee;
+  // float: right;
+}
+
+.counter.exceeded {color: red;}
+
+/*
+*error message
+*/
+.error {
+  border: 1px solid;
+  margin: 20px 0px;
+  padding: 15px 10px 15px 10px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-color: #FFBABA;
+}

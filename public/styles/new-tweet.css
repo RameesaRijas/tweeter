@@ -8,15 +8,15 @@
   background-color: #f4f1ec;
   margin: 0 2em;
   align-items: center;
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
-
 .new-tweet h2 {
   margin: 10px;
 }
 
 form {
-  margin-top:50px;/**/
+  margin-top: 50px;
+  /**/
   padding: 10px;
   position: relative;
 }
@@ -30,27 +30,26 @@ textarea {
   height: 60px;
   resize: none;
   border: none;
-  border-bottom: solid rgb(118, 116, 116);
+  border-bottom: solid #767474;
   background-color: #f4f1ec;
 }
 
 #tweet-form textarea:focus-visible {
-  outline:none;
-  border-bottom: solid rgb(20, 18, 18);
+  outline: none;
+  border-bottom: solid #141212;
 }
 
 /**
 *footer section
 *
 */
-
 section div {
-  /* display: flex;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; */
+  align-items: center;
+  justify-content: space-between;
   padding-top: 7px;
 }
-
 section button {
   padding: 2px 9px;
   font-family: Bungee;
@@ -59,16 +58,20 @@ section button {
   color: #FFFFFF;
   text-transform: uppercase;
 }
-section button:hover{border:solid #90b1dd}
-
-section button:focus{border:solid #90b1dd}
+section button:hover {
+  border: solid #90b1dd;
+}
+section button:focus {
+  border: solid #90b1dd;
+}
 
 .counter {
   font-family: Bungee;
-  float: right;
 }
 
-.counter.exceeded {color: red;}
+.counter.exceeded {
+  color: red;
+}
 
 /*
 *error message

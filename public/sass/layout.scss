@@ -3,10 +3,10 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+ @use 'variables';
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,9 +14,10 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: variables.$background;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
 }
@@ -37,44 +38,46 @@ article.tweet {
   padding-top: 10px;
   border-radius: 5px;
   margin: 2em;
-  padding: 20px;
-  border: solid #141212;
-}
-article.tweet:hover {
-  box-shadow: 11px 6px 4px 0px #888;
-}
-article.tweet header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-article.tweet header div.userhandle {
-  color: #b9b6b6;
-  margin-left: auto;
-}
-article.tweet header div img {
-  height: 40px;
-}
-article.tweet p {
-  word-break: break-all;
-  margin-top: 2em;
-}
-article.tweet footer {
-  display: flex;
-  flex-direction: none;
-  align-items: center;
-  font-size: 16px;
-  justify-content: space-between;
-  padding-top: 15px;
-  border-top: solid #111010;
-}
-article.tweet footer div i:hover {
-  color: #e6b71e;
+  padding:20px;
+  border:solid rgb(20, 18, 18);
+  
+  &:hover {
+    box-shadow: 11px 6px 4px 0px #888
+  }
+  header {
+    @include variables.flex($direction:row);
+
+    div.userhandle {
+      color:#b9b6b6;
+      margin-left: auto;
+    }
+
+    div img {
+      height:40px;
+    }
+  }
+
+  p {
+    word-break: break-all;
+    margin-top:2em;
+  }
+
+  footer{
+    @include variables.flex($direction:none);
+    font-size: 16px;
+    justify-content:space-between;
+    padding-top:15px;
+    border-top: solid rgb(17, 16, 16);
+
+    div i:hover {
+      color:rgb(230, 183, 30);
+    }
+  }
 }
 
 #scroll-button {
   display: inline-block;
-  background-color: #cfe372;
+  background-color: hsl(71, 67%, 67%);
   width: 35px;
   height: 35px;
   text-align: center;
@@ -82,44 +85,46 @@ article.tweet footer div i:hover {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  transition: background-color 0.3s;
+  transition: background-color .3s;
   z-index: 1000;
-}
-#scroll-button:hover {
-  background-color: #e27f15;
+
+  &:hover {
+    background-color: rgb(226, 127, 21);
+  }
 }
 
 /****** responsive media */
 @media only screen and (max-width: 400px) {
   article.tweet header {
-    flex-flow: row wrap;
+    flex-flow:row wrap;
   }
-
   nav {
-    flex-flow: column wrap;
+    flex-flow:column wrap;
   }
-
   article.tweet footer {
-    flex-flow: row wrap;
+    flex-flow:row wrap;
   }
 }
 @media only screen and (min-width: 1024px) {
   .header {
-    float: left;
-    width: 30%;
-    margin: 4em 0em 0em 4em;
-  }
-  .header img {
-    padding-top: 1.5em;
-  }
+    float:left;
+    width :30%;
+    margin:4em 0em 0em 4em;
 
+    img {
+      padding-top:1.5em;
+    }
+  }
   #tweets-container {
-    margin-top: 2.5em;
+    margin-top:2.5em;
   }
-
   .container {
     float: right;
-    width: 60%;
-    margin-top: 1.5em;
+    width:60%;
+    margin-top:1.5em;
   }
 }
+
+
+
+
