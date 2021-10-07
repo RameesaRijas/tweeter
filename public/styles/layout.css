@@ -73,8 +73,7 @@ article.tweet footer{
   justify-content:space-between;
   align-items: center;
   padding-top:15px;
-  border-top-style: solid;
-  border-top-color:rgb(17, 16, 16);
+  border-top: solid rgb(17, 16, 16);;
 }
 
 article.tweet footer div i:hover {
@@ -98,6 +97,35 @@ article.tweet footer div i:hover {
 #scroll-button:hover {
   background-color: rgb(226, 127, 21);
 }
+
+/****** responsive media */
+@media only screen and (max-width: 400px) {
+  article.tweet header {
+    flex-flow:row wrap;
+  }
+  nav {
+    flex-flow:column wrap;
+  }
+  article.tweet footer {
+    flex-flow:row wrap;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header {
+    float:left;
+    width :30%;
+    margin:4em 0em 0em 4em;
+  }
+  #tweets-container {
+    margin-top:2.5em;
+  }
+  .container {
+    float: right;
+    width:60%;
+    margin-top:1.5em;
+  }
+}
+
 
 
 
