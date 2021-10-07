@@ -1,9 +1,14 @@
+//partial file 
+//loaded commonly used styles as variable
 $navcolor: #4056A1;
 $background: #f4f4ec;
 $headerBackground:#f2be00;
 $backgroundImage: url("/images/background.png");
 $textcolor:#FFFFFF;
 
+//mixin scss
+// groups of CSS declarations want to reuse 
+//making flex center
 @mixin flex($direction: column) {
   display:flex;
   flex-direction: $direction;

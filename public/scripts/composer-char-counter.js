@@ -1,4 +1,5 @@
 //after document loaded
+//this is for checking character counter in form
 $().ready(function() {
   const limit = 140;
   //when entering input to textarea

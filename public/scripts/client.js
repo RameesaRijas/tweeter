@@ -1,7 +1,7 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * Client-side JS logic
+ * loading tweets
+ * and other event listeners , used jquery
  */
 $(() => {
   //get tweets by ajax get call
