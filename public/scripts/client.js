@@ -100,7 +100,7 @@ $(() => {
   //show and hide
   $(".compose-tweet").click(() => {
     if ($(".new-tweet").is(':hidden')) {
-      $(".new-tweet").show();
+      $(".new-tweet").slideDown("slow");
       $(".new-tweet").find("textarea").focus();
     } else {
       $(".new-tweet").hide();
@@ -121,7 +121,7 @@ $(() => {
   btn.on('click', function(e) {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
-    $(".new-tweet").show();
+    $(".new-tweet").slideDown("slow");
     $(".new-tweet").find("textarea").focus();
   });
 });
