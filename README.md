@@ -2,7 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Built with HTML, CSS, JS, jQuery and AJAX.
+
 
 ## Getting Started
 
@@ -15,3 +16,23 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+
+## Final Product
+
+!["Desktop home screenshot, Listed Tweets, New Tweets Form"](https://raw.githubusercontent.com/RameesaRijas/tweeter/master/docs/desktop-home.png)
+
+!["Screenshot of small screens"](https://raw.githubusercontent.com/RameesaRijas/tweeter/master/docs/small-devices.png)
+
+!["When Scrolled scroll to top arrow"](https://raw.githubusercontent.com/RameesaRijas/tweeter/master/docs/scroll-to-top.png)
+
+## How works
+
+-   Tweets in reverse-chronological order (that is, by creation time descending)
+
+- Add new Tweet using tweet form
+- single page app , No page refresh 
+- A client-side Single Page App (SPA), Communicates with a server via AJAX 
+
+
